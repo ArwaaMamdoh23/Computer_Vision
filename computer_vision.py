@@ -13,6 +13,7 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import tensorflow as tf
 from PIL import Image
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
