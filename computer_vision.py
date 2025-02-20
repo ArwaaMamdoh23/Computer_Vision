@@ -28,9 +28,10 @@ from torch.utils.data import DataLoader, random_split
 from torchvision.models import resnet18
 from torchvision import models
 
-train_dir = '/content/drive/MyDrive/Teeth_Dataset/Training'
-val_dir = '/content/drive/MyDrive/Teeth_Dataset/Validation'
-test_dir = '/content/drive/MyDrive/Teeth_Dataset/Testing'
+
+train_dir = r"D:\GitHub\Computer_Vision\Teeth_Dataset\Training"
+test_dir = r"D:\GitHub\Computer_Vision\Teeth_Dataset\Testing"
+val_dir = r"D:\GitHub\Computer_Vision\Teeth_Dataset\Validation"
 
 
 
@@ -69,9 +70,9 @@ test_generator = datagen.flow_from_directory(
 
 print("Data generators reloaded successfully.")
 
-train_dir = '/content/drive/MyDrive/Teeth_Dataset/Training'
-val_dir = '/content/drive/MyDrive/Teeth_Dataset/Validation'
-test_dir = '/content/drive/MyDrive/Teeth_Dataset/Testing'
+train_dir = r"D:\GitHub\Computer_Vision\Teeth_Dataset\Training"
+test_dir = r"D:\GitHub\Computer_Vision\Teeth_Dataset\Testing"
+val_dir = r"D:\GitHub\Computer_Vision\Teeth_Dataset\Validation"
 
 # Parameters
 image_size = (256, 256)
@@ -101,9 +102,9 @@ val_dataset = ImageFolder(val_dir, transform=val_transforms)
 test_dataset = ImageFolder(test_dir, transform=val_transforms)
 
 # Create data loaders
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
-val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=0)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=0)
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=0)
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
